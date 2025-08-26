@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+::-webkit-scrollbar {
+  background: rgba(255, 255, 255, 0.1);
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+#sidebar {
+  position: absolute;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.5);
+  transition: transform 0.1s ease-in-out;
+}
+
+#sidebar * {
+  color: white;
+}
+
+#sidebar:is(.DESKTOP) #sidebar-hide-button {
+  position: absolute;
+  left: 20rem;
+  width: 2rem;
+  height: 2rem;
+  background: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sidebar:is(.DESKTOP):is(.hidden) #sidebar-hide-button {
+  transform: rotate(180deg);
+}
+
+#sidebar:is(.MOBILE) #sidebar-hide-button {
+  position: absolute;
+  top: -3rem;
+  left: calc(100% - 3rem);
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+}
+
+#sidebar:is(.MOBILE) #sidebar-hide-button span {
+  font-size: 2.5rem;
+}
+
+#sidebar:is(.MOBILE):is(.hidden) #sidebar-hide-button {
+  transform: rotate(90deg);
+}
+
+#sidebar:is(.DESKTOP) #home-button {
+  position: absolute;
+  top: 2rem;
+  right: -2rem;
+  width: 2rem;
+  height: 2rem;
+  background: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sidebar:is(.MOBILE) #home-button {
+  position: absolute;
+  top: -3rem;
+  left: calc(100% - 6rem);
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sidebar:is(.MOBILE) #home-button span {
+  font-size: 1.7rem;
+}
+
+#sidebar:is(.DESKTOP) {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  overflow-y: scroll;
+  padding-top: 10rem;
+}
+
+#sidebar:is(.DESKTOP) .directory-entry {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  margin: 0.25rem;
+  cursor: pointer;
+}
+
+* {
+  user-select: none;
+  font-family: "Source Code Pro", monospace;
+}
+
+#directory-entries-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 10rem;
+}
+
+.directory-button {
+  margin: 0;
+}
+
+.directory-button span {
+  font-size: 5rem;
+}
